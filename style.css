@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Poller+One&family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+    color-scheme: dark;
+    --gold: #ffd44f;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 1.25rem clamp(1rem, 4vw, 4rem);
+    color: #f5f2e8;
+    background: #080b13 url("./Images/sky.jpg") center / cover fixed no-repeat;
+    font-family: "Roboto", Arial, sans-serif;
+}
+
+header,
+main,
+footer {
+    width: min(1100px, 100%);
+    margin-inline: auto;
+}
+
+header {
+    padding: 1rem clamp(1rem, 3vw, 2rem) 0;
+}
+
+nav ul {
+    width: max-content;
+    max-width: 100%;
+    margin: 0;
+    margin-inline: auto;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    float: left;
+    font-size: 0.9rem;
+}
+
+nav ul::after,
+.team-gallery::after,
+main::after {
+    display: block;
+    clear: both;
+    content: "";
+}
+
+nav a {
+    display: block;
+    padding: 0.55rem 0.9rem;
+    color: var(--gold);
+    text-decoration: none;
+    transition: color 160ms ease;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    color: #fff;
+    text-decoration: underline;
+    text-underline-offset: 0.3em;
+}
+
+h1 {
+    margin: 0;
+    padding: 1.25rem 0 1.5rem;
+    color: var(--gold);
+    font-family: "Poller One", Georgia, serif;
+    font-size: clamp(2rem, 6vw, 3.6rem);
+    line-height: 1.15;
+    text-align: center;
+    text-shadow: 0 3px 18px rgba(255, 193, 7, 0.2);
+}
+
+main {
+    position: relative;
+    padding: 0 clamp(1rem, 3vw, 2rem) 2rem;
+}
+
+.left {
+    position: relative;
+    float: right;
+    width: 48%;
+    margin-left: 2%;
+}
+
+.right {
+    position: relative;
+    float: right;
+    clear: right;
+    width: 48%;
+    margin-left: 2%;
+}
+
+.left img {
+    display: block;
+    width: 100%;
+    max-height: 570px;
+    object-fit: cover;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+}
+
+.right h2 {
+    margin: 0;
+    padding: 0.85rem;
+    color: var(--gold);
+    font-family: "Poller One", Georgia, serif;
+    font-size: 1.15rem;
+    letter-spacing: 0.04em;
+    text-align: center;
+}
+
+.team-photo {
+    position: relative;
+    float: left;
+    width: 33.333%;
+    padding: 0.35rem;
+}
+
+.team-photo:hover,
+.team-photo:focus-visible {
+    z-index: 1;
+}
+
+.team-photo img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    transition: transform 180ms ease, filter 180ms ease;
+}
+
+.team-photo:hover img,
+.team-photo:focus-visible img {
+    transform: scale(1.04);
+    filter: brightness(1.15);
+}
+
+.far-galaxy {
+    float: left;
+    width: 50%;
+    margin: 0;
+    padding: 1.35rem 1.5rem;
+    color: #f3e9c5;
+    font-size: clamp(1rem, 1.7vw, 1.2rem);
+    letter-spacing: 0.025em;
+    line-height: 1.8;
+    text-align: justify;
+    white-space: pre-line;
+}
+
+footer {
+    padding: 0 1rem 1.5rem;
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid var(--gold);
+    border-radius: 999px;
+    background: #9b1427;
+    color: #fff4c7;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.button:hover,
+.button:focus-visible {
+    transform: translateY(-2px);
+    background: #bd1b33;
+}
+
+@media (max-width: 700px) {
+    body {
+        padding: 0.75rem;
+        background-attachment: scroll;
+    }
+
+    nav ul {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav li {
+        display: inline-block;
+        float: none;
+    }
+
+    .left,
+    .right,
+    .far-galaxy {
+        float: none;
+        width: 100%;
+        margin: 0 0 1rem;
+    }
+
+    .left img {
+        max-height: 460px;
+    }
+
+    .far-galaxy {
+        padding: 1rem;
+        text-align: left;
+    }
+}
